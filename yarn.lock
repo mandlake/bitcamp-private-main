@@ -483,6 +483,11 @@
   resolved "https://registry.npmjs.org/@popperjs/core/-/core-2.11.8.tgz"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
+"@prisma/client@5.14.0":
+  version "5.14.0"
+  resolved "https://registry.yarnpkg.com/@prisma/client/-/client-5.14.0.tgz#dadca5bb1137ddcebb454bbdaf89423823d3363f"
+  integrity sha512-akMSuyvLKeoU4LeyBAUdThP/uhVP3GuLygFE3MlYzaCb3/J8SfsYBE5PkaFuLuVpLyA6sFoW+16z/aPhNAESqg==
+
 "@prisma/debug@5.14.0":
   version "5.14.0"
   resolved "https://registry.yarnpkg.com/@prisma/debug/-/debug-5.14.0.tgz#1227c705893c38284f7c63d72441480ebaa12605"
@@ -3013,7 +3018,7 @@ streamsearch@^1.1.0:
 
 string-width@^4.1.0:
   version "4.2.3"
-  resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
   dependencies:
     emoji-regex "^8.0.0"

@@ -1,34 +1,95 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 function Join() {
   const router = useRouter();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    username: "",
+    password: "",
+  });
+
+  const handleJoin = async () => {
+    try {
+      const response = await fetch("/create-user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const user = await response.json();
+        console.log(user);
+        // 회원가입 성공 시 로그인 페이지로 이동
+        router.push("/login");
+      } else {
+        console.error("회원가입 실패");
+      }
+    } catch (error) {
+      console.error("회원가입 오류:", error);
+    }
+  };
+
   return (
-    <>
-      <div className="w-screen h-screen flex align-middle justify-center items-center">
-        <div className="font-roboto w-[25vw] h-[50vh] border border-gray-700 flex flex-col justify-center items-center gap-[1.111vh] bg-gray-200 p-[1.111vh]">
-          <p>회원가입</p>
-          <div>
-            <p>이름</p>
-            <input type="text" />
-          </div>
-          <div>
-            <p>아이디</p>
-            <input type="text" />
-          </div>
-          <div>
-            <p>비밀번호</p>
-            <input type="password" />
-          </div>
-          <div>
-            <p>비밀번호 확인</p>
-            <input type="password" />
-          </div>
-          <button onClick={() => router.push(`/pages/login`)}>회원가입</button>
+    <div className="w-screen h-screen flex align-middle justify-center items-center">
+      <div className="font-roboto w-[25vw] h-[50vh] border border-gray-700 flex flex-col justify-center items-center gap-[1.111vh] bg-gray-200 p-[1.111vh]">
+        <p>회원가입</p>
+        <div>
+          <p>이름</p>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={(e: any) =>
+              setFormData({ ...formData, name: e.target.value })
+            }
+          />
         </div>
+        <div>
+          <p>아이디</p>
+          <input
+            type="text"
+            name="username"
+            value={formData.username}
+            onChange={(e: any) =>
+              setFormData({ ...formData, username: e.target.value })
+            }
+          />
+        </div>
+        <div>
+          <p>비밀번호</p>
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={(e: any) =>
+              setFormData({ ...formData, password: e.target.value })
+            }
+          />
+        </div>
+        <div>
+          <p>비밀번호 확인</p>
+          <input type="password" />
+        </div>
+        <div>
+          <p>이메일</p>
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={(e: any) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+          />
+        </div>
+        <button onClick={handleJoin}>회원가입</button>
       </div>
-    </>
+    </div>
   );
 }
 

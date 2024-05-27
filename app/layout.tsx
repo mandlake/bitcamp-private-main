@@ -3,10 +3,6 @@ import "./globals.css";
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 
-const ReduxProvider = dynamic(() => import("@/redux/redux-provider"), {
-  ssr: false,
-});
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,9 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReduxProvider>
-          <div>{children}</div>
-        </ReduxProvider>
+        <div>{children}</div>
       </body>
     </html>
   );
