@@ -1,9 +1,23 @@
 "use client";
 
+import { forgotPassword } from "@/app/api/post/route";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 function ForgotPassword() {
   const router = useRouter();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const handleForgotPassword = async () => {
+    try {
+      await forgotPassword(formData);
+      router.push(`/pages/login`);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <>
       <div className="w-screen h-screen flex align-middle justify-center items-center">
@@ -11,15 +25,25 @@ function ForgotPassword() {
           <h1>Forgot Password</h1>
           <div>
             <div className="flex flex-col">
-              <p>Enter Your Current Password</p>
-              <input type="password" />
+              <p>Enter Your username</p>
+              <input
+                type="text"
+                onChange={(e: any) =>
+                  setFormData({ ...formData, username: e.target.value })
+                }
+              />
             </div>
-            <div>
+            <div className="flex flex-col">
               <p>Enter Your New Password</p>
-              <input type="password" />
+              <input
+                type="password"
+                onChange={(e: any) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
+              />
             </div>
           </div>
-          <button onClick={() => router.push(`/pages/login`)} className="">
+          <button onClick={() => handleForgotPassword()} className="">
             Submit
           </button>
         </div>

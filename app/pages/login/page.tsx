@@ -1,19 +1,38 @@
 "use client";
 
+import { login } from "@/app/api/post/route";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 function Login() {
   const router = useRouter();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleLogin = async () => {
+    try {
+      const response = await login(formData);
+      if (response.tokens !== "") {
+        router.push("/pages/home");
+      } else {
+        alert("로그인에 실패했습니다. 다시 시도하십시오.");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("로그인에 실패했습니다. 다시 시도하십시오.");
+    }
+  };
+
   return (
     <>
       <div className="flex w-screen h-screen items-center justify-center">
-        <form
-          action="#"
+        <div
           id="login"
-          method="get"
           className="font-roboto w-[25vw] h-[50vh] border border-gray-700 flex flex-col justify-between items-center gap-[1.111vh] bg-gray-200 p-[1.111vh]"
         >
-          <fieldset>
+          <div>
             <legend className="sr-only">소셜 로그인</legend>
             <button
               className="w-[24vw] h-[5vh] mt-[2vh] bg-white border border-gray-700 font-bold flex justify-center items-center gap-[1.111vh]"
@@ -25,9 +44,9 @@ function Login() {
               />
               Log in with Google
             </button>
-          </fieldset>
+          </div>
           <p>or</p>
-          <fieldset>
+          <div>
             <legend>일반 로그인</legend>
             <label htmlFor="username">
               <input
@@ -35,6 +54,10 @@ function Login() {
                 id="username"
                 name="username"
                 placeholder="Username"
+                value={formData.username}
+                onChange={(e: any) =>
+                  setFormData({ ...formData, username: e.target.value })
+                }
                 className="w-[24vw] h-[5vh] border border-gray-700 px-[1.111vw] mb-[1.111vh] bg-gray-200"
               />
             </label>
@@ -44,17 +67,20 @@ function Login() {
                 id="password"
                 name="password"
                 placeholder="Password"
+                value={formData.password}
+                onChange={(e: any) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
                 className="w-[24vw] h-[5vh] border border-gray-700 px-[1.111vw] mb-[1.111vh] bg-gray-200"
               />
             </label>
             <button
-              onClick={() => router.push(`/pages/home`)}
+              onClick={() => handleLogin()}
               className="w-[24vw] h-[5vh] bg-white border border-gray-700 hover:bg-gray-700 hover:text-white  font-bold"
-              type="submit"
             >
               Login
             </button>
-          </fieldset>
+          </div>
           <div className="w-[24vw] flex flex-col justify-between items-center p-[1.111vh]">
             <p
               onClick={() => router.push(`/pages/forget_password`)}
@@ -69,7 +95,7 @@ function Login() {
               Aren't you a member yet? Join now!
             </p>
           </div>
-        </form>
+        </div>
       </div>
     </>
   );

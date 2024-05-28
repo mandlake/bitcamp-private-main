@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { createUser } from "@/app/api/post/route";
 
 function Join() {
   const router = useRouter();
@@ -14,24 +15,10 @@ function Join() {
 
   const handleJoin = async () => {
     try {
-      const response = await fetch("/create-user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        const user = await response.json();
-        console.log(user);
-        // 회원가입 성공 시 로그인 페이지로 이동
-        router.push("/login");
-      } else {
-        console.error("회원가입 실패");
-      }
+      await createUser(formData);
+      router.push("/pages/login");
     } catch (error) {
-      console.error("회원가입 오류:", error);
+      console.log(error);
     }
   };
 
