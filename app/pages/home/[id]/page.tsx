@@ -6,6 +6,7 @@ import { NextPage } from "next";
 import SearchBox from "@/app/components/common/module/search-box";
 import IconsBox from "@/app/components/common/module/icons-box";
 import NewsMini from "@/app/components/common/module/news-mini";
+import LawyersMiniPage from "@/app/components/common/module/lawyers--mini";
 
 const Home: NextPage = (props: any) => {
   return (
@@ -29,7 +30,9 @@ const Home: NextPage = (props: any) => {
                 <NewsMini />
               </div>
               <div className="shopping--mini h-[560px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
-              <div className="others--mini h-[1000px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
+              <div className="lawyers--mini h-[1000px] border border-[rgba(0,0,0,0.1)] rounded-lg">
+                <LawyersMiniPage />
+              </div>
             </div>
             <div className="w-[420px] flex flex-col gap-4">
               <div className="login-mini flex items-center justify-center h-[150px] border border-[rgba(0,0,0,0.1)] rounded-lg">

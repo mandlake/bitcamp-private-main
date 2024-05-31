@@ -5,6 +5,7 @@ import SearchBox from "./components/common/module/search-box";
 import IconsBox from "./components/common/module/icons-box";
 import LoginMini from "./components/common/module/login--mini";
 import NewsMini from "./components/common/module/news-mini";
+import LawyersMiniPage from "./components/common/module/lawyers--mini";
 
 function Home() {
   return (
@@ -28,7 +29,9 @@ function Home() {
                 <NewsMini />
               </div>
               <div className="shopping--mini h-[560px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
-              <div className="others--mini h-[1000px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
+              <div className="lawyers--mini h-[1000px] border border-[rgba(0,0,0,0.1)] rounded-lg">
+                <LawyersMiniPage />
+              </div>
             </div>
             <div className="w-[420px] flex flex-col gap-4">
               <div className="login-mini flex items-center justify-center h-[150px] border border-[rgba(0,0,0,0.1)] rounded-lg">
