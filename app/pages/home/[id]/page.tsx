@@ -1,11 +1,12 @@
 "use client";
 
-import Navigation from "./components/common/module/default-box";
-import SearchBox from "./components/common/module/search-box";
-import IconsBox from "./components/common/module/icons-box";
-import LoginMini from "./components/common/module/login--mini";
+import IconsBox from "@/app/components/common/module/icons-box";
+import SearchBox from "@/app/components/common/module/search-box";
+import { Navigation } from "@mui/icons-material";
+import UserPageMini from "../../userpage/page";
+import { NextPage } from "next";
 
-function Home() {
+const Home: NextPage = (props: any) => {
   return (
     <>
       <div className="flex flex-col w-screen justify-center items-center box-border text-[var(--color-Naver-black)] pb-[64px]">
@@ -29,7 +30,7 @@ function Home() {
             </div>
             <div className="w-[420px] flex flex-col gap-4">
               <div className="login-mini flex items-center justify-center h-[150px] border border-[rgba(0,0,0,0.1)] rounded-lg">
-                <LoginMini />
+                <UserPageMini data={props.params.id} />
               </div>
               <div className="address border border-[rgba(0,0,0,0.1)] rounded-lg">
                 <img
@@ -54,6 +55,6 @@ function Home() {
       <div className="footer flex h-[430px] w-screen bg-[rgba(0,0,0,0.2)] border border-[var(--color-Naver-footer)]"></div>
     </>
   );
-}
+};
 
 export default Home;

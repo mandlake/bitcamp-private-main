@@ -11,45 +11,43 @@ import MapIcon from "@mui/icons-material/Map";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { iconsGrayCSS, iconsGreenCSS } from "../icons";
 
 const icons = [
-  { id: 1, img: <DraftsIcon className="w-[35px] h-[35px]" />, text: "메일" },
-  { id: 2, img: <LocalCafeIcon className="w-[35px] h-[35px]" />, text: "카페" },
-  { id: 3, img: <SmsIcon className="w-[35px] h-[35px]" />, text: "블로그" },
-  { id: 4, img: <Shop2Icon className="w-[35px] h-[35px]" />, text: "쇼핑" },
-  { id: 5, img: <NewspaperIcon className="w-[35px] h-[35px]" />, text: "뉴스" },
+  { id: 1, img: <DraftsIcon className={iconsGreenCSS} />, text: "메일" },
+  { id: 2, img: <LocalCafeIcon className={iconsGreenCSS} />, text: "카페" },
+  { id: 3, img: <SmsIcon className={iconsGreenCSS} />, text: "블로그" },
+  { id: 4, img: <Shop2Icon className={iconsGreenCSS} />, text: "쇼핑" },
+  { id: 5, img: <NewspaperIcon className={iconsGreenCSS} />, text: "뉴스" },
   {
     id: 6,
-    img: <InsertChartIcon className="w-[35px] h-[35px]" />,
+    img: <InsertChartIcon className={iconsGreenCSS} />,
     text: "증권",
   },
-  { id: 7, img: <HomeIcon className="w-[35px] h-[35px]" />, text: "부동산" },
-  { id: 8, img: <MapIcon className="w-[35px] h-[35px]" />, text: "지도" },
-  { id: 9, img: <DashboardIcon className="w-[35px] h-[35px]" />, text: "웹툰" },
-  { id: 10, img: <FlashOnIcon className="w-[35px] h-[35px]" />, text: "치료" },
+  { id: 7, img: <HomeIcon className={iconsGreenCSS} />, text: "부동산" },
+  { id: 8, img: <MapIcon className={iconsGreenCSS} />, text: "지도" },
+  { id: 9, img: <DashboardIcon className={iconsGreenCSS} />, text: "웹툰" },
+  { id: 10, img: <FlashOnIcon className={iconsGreenCSS} />, text: "치료" },
 ];
 
 const IconsBox = () => {
   return (
     <>
-      <nav className="flex justify-center w-[900px]">
+      <nav className="flex justify-center w-[900px] items-start">
         {icons &&
           icons.map((icon) => (
             <div
               key={icon.id}
               className="flex flex-col justify-center items-center p-2"
             >
-              <div className=" border-2 rounded-xl p-2 text-[var(--color-Naver-main)]">
-                {icon.img}
-              </div>
+              <div className=" border-2 rounded-xl p-2">{icon.img}</div>
               <p className="icon__text">{icon.text}</p>
             </div>
           ))}
         <div className="flex flex-col justify-center items-center p-2">
-          <div className=" border-2 rounded-xl p-2 text-[var(--color-Naver-main)]">
-            <MoreHorizIcon className="w-[35px] h-[35px] text-black-50" />
+          <div className=" border-2 rounded-xl p-2">
+            <MoreHorizIcon className={iconsGrayCSS} />
           </div>
-          <p className="icon__text">더보기</p>
         </div>
       </nav>
     </>

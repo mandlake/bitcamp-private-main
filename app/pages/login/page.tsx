@@ -4,7 +4,7 @@ import { login } from "@/app/api/post/route";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-function Login() {
+const Login = () => {
   const router = useRouter();
   const [formData, setFormData] = useState({
     username: "",
@@ -15,7 +15,7 @@ function Login() {
     try {
       const response = await login(formData);
       if (response.tokens !== "") {
-        router.push("/pages/home");
+        router.push(`/pages/home/${response.username}`);
       } else {
         alert("로그인에 실패했습니다. 다시 시도하십시오.");
       }
@@ -99,6 +99,6 @@ function Login() {
       </div>
     </>
   );
-}
+};
 
 export default Login;
