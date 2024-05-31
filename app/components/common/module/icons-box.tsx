@@ -27,7 +27,7 @@ const icons = [
   { id: 7, img: <HomeIcon className={iconsGreenCSS} />, text: "부동산" },
   { id: 8, img: <MapIcon className={iconsGreenCSS} />, text: "지도" },
   { id: 9, img: <DashboardIcon className={iconsGreenCSS} />, text: "웹툰" },
-  { id: 10, img: <FlashOnIcon className={iconsGreenCSS} />, text: "치료" },
+  { id: 10, img: <FlashOnIcon className={iconsGreenCSS} />, text: "치지직" },
 ];
 
 const IconsBox = () => {
@@ -45,7 +45,7 @@ const IconsBox = () => {
             </div>
           ))}
         <div className="flex flex-col justify-center items-center p-2">
-          <div className=" border-2 rounded-xl p-2">
+          <div className=" border-2 rounded-xl p-2 text-[var(--color-Harbor-second)]">
             <MoreHorizIcon className={iconsGrayCSS} />
           </div>
         </div>

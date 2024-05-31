@@ -1,15 +1,16 @@
 "use client";
 
-import IconsBox from "@/app/components/common/module/icons-box";
-import SearchBox from "@/app/components/common/module/search-box";
-import { Navigation } from "@mui/icons-material";
+import Navigation from "@/app/components/common/module/default-box";
 import UserPageMini from "../../userpage/page";
 import { NextPage } from "next";
+import SearchBox from "@/app/components/common/module/search-box";
+import IconsBox from "@/app/components/common/module/icons-box";
+import NewsMini from "@/app/components/common/module/news-mini";
 
 const Home: NextPage = (props: any) => {
   return (
     <>
-      <div className="flex flex-col w-screen justify-center items-center box-border text-[var(--color-Naver-black)] pb-[64px]">
+      <div className="flex flex-col w-screen justify-center items-center box-border text-[var(--color-main)] pb-[64px]">
         <div className="w-[1280px] box-border">
           <Navigation />
           <div className="flex flex-col justify-center items-center pb-[20px]">
@@ -24,7 +25,9 @@ const Home: NextPage = (props: any) => {
                   src="https://ssl.pstatic.net/melona/libs/1497/1497607/5208297d6dcb504d914e_20240520140159458.jpg"
                 />
               </div>
-              <div className="news--mini h-[426px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
+              <div className="news--mini h-[426px] border border-[rgba(0,0,0,0.1)] rounded-lg">
+                <NewsMini />
+              </div>
               <div className="shopping--mini h-[560px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
               <div className="others--mini h-[1000px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
             </div>

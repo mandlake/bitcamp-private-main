@@ -7,12 +7,16 @@ const LoginMini = () => {
   const router = useRouter();
   return (
     <div className="h-[125px] flex flex-col justify-between items-center">
-      <p>네이버를 더 안전하고 편리하게 이용하세요</p>
+      <p>Lawmate를 더 안전하고 편리하게 이용하세요</p>
       <button
         onClick={() => router.push("pages/login")}
-        className="flex bg-[var(--color-Naver-main)] h-[60px] rounded-md w-[375px] text-white items-center justify-center gap-3"
+        className="flex bg-[var(--color-Harbor-third)] border-2 border-[var(--color-Harbor-sec)] h-[60px] rounded-md w-[375px] text-white items-center justify-center gap-3"
       >
-        <span className={`${logoCss} text-[20px] text-white`}>NAVER</span>
+        <span
+          className={`${logoCss} text-[18px] text-[var(--color-Harbor-first)]`}
+        >
+          LAWMATE
+        </span>
         <p>로그인</p>
       </button>
       <div className="flex flex-row justify-center items-center text-[var(--color-Naver-dark-gray)] gap-3">
