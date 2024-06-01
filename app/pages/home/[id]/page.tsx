@@ -65,7 +65,7 @@ const Home: NextPage = (props: any) => {
               <div className="widget-board--mini h-[771px] border border-[rgba(0,0,0,0.1)] rounded-lg bg-[var(--color-widget-bg)]">
                 <WidgetBoardMini />
               </div>
-              <div className="whale--mini h-[64px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
+              <div className="ai--mini h-[64px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
             </div>
           </div>
         </div>
