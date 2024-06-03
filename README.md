@@ -15,7 +15,7 @@
 
 - 주요 내용:
 
-  - 사용 기술: React 18, Next 14, Supabase, Prisma
+  - 사용 기술: React 18, Next 14, Typescript, Supabase, Prisma
 
   - 구성 페이지:
 

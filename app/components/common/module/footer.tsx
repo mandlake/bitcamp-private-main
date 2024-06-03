@@ -3,7 +3,7 @@ const FooterPage = () => {
     <>
       <div className=" flex flex-col w-[1280px] items-first justify-center">
         <div className="border-y border-gray-200">
-          <span className=" font-semibold flex p-3 flex-row">LAWMATE</span>
+          <span className=" font-semibold flex p-3 flex-row">⚖️ LAWMATE </span>
         </div>
         <div className="border-y border-gray-200">
           <div className="flex p-3 flex-row gap-5">
