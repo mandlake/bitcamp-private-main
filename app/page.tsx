@@ -12,6 +12,7 @@ import CrimeRateMiniPage from "./components/common/module/crime-rate--mini";
 import WidgetBoardMini from "./components/common/module/widget-board--mini";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import { useRouter } from "next/navigation";
+import FooterPage from "./components/common/module/footer";
 
 function Home() {
   const router = useRouter();
@@ -79,7 +80,9 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="footer flex h-[430px] w-screen bg-[rgba(0,0,0,0.2)] border border-[var(--color-Naver-footer)]"></div>
+      <div className="footer flex items-center justify-center h-[430px] w-screen bg-gray-100 border border-[var(--color-Naver-footer)] ">
+        <FooterPage />
+      </div>
     </>
   );
 }

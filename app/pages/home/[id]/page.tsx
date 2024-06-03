@@ -13,6 +13,7 @@ import CrimeRateMiniPage from "@/app/components/common/module/crime-rate--mini";
 import WidgetBoardMini from "@/app/components/common/module/widget-board--mini";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import { useRouter } from "next/navigation";
+import FooterPage from "@/app/components/common/module/footer";
 
 const Home: NextPage = (props: any) => {
   const router = useRouter();
@@ -80,7 +81,9 @@ const Home: NextPage = (props: any) => {
           </div>
         </div>
       </div>
-      <div className="footer flex h-[430px] w-screen bg-[rgba(0,0,0,0.2)] border border-[var(--color-Naver-footer)]"></div>
+      <div className="footer flex h-[430px] w-screen bg-[rgba(0,0,0,0.2)] border border-[var(--color-Naver-footer)]">
+        <FooterPage />
+      </div>
     </>
   );
 };
