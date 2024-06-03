@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+로메이트 프론트엔드 발표
 
-## Getting Started
+발표자: 김시온 (2023년 6월 3일)
 
-First, run the development server:
+소개
+안녕하세요. 로메이트 팀의 프론트엔드 담당 김시온입니다. 오늘은 2023년 6월 3일에 진행된 로메이트 프론트엔드 발표 내용을 간략하게 정리하여 소개하고자 합니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+주요 내용
+사용 기술: React 18, Next 14, Supabase, Prisma
+구성 페이지:
+뉴스 페이지: 실시간 사전 및 사고 기사
+법률 페이지: 실제 상담 사례, 해결 사례, 법률 가이드
+변호사 페이지: 변호사 의뢰 신청
+범죄율 페이지 (디자인 미정)
+위젯 페이지
+AI 페이지: 실제 AI와 상담 가능
+기능:
+회원가입/로그인
+ID/비밀번호 찾기
+발표 내용
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. 로메이트 메인 페이지
+   네이버 홈페이지를 참고하여 재구성
+   뉴스 페이지: 실시간 사전 및 사고 기사
+   법률 페이지: 실제 상담 사례, 해결 사례, 법률 가이드
+   변호사 페이지: 변호사 의뢰 신청
+   범죄율 페이지 (디자인 미정)
+   위젯 페이지
+   AI 페이지: 실제 AI와 상담 가능
+2. 회원가입/로그인
+   회원가입: 이름, ID, 비밀번호, 이메일 입력
+   로그인: ID, 비밀번호 입력
+   로그인 성공 시 메인 페이지 변화
+   로로 페이지 이동 가능
+3. ID/비밀번호 찾기
+   ID 찾기: 등록 이메일 입력 후 해당 ID 확인
+   비밀번호 찾기: ID 입력 후 재설정 가능
+   마무리
+   본 발표에서는 로메이트 프론트엔드의 주요 기능과 사용 기술을 소개했습니다. 앞으로 더욱 사용자 친화적이고 효율적인 UI/UX를 제공하기 위해 노력하겠습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+참고자료
+로메이트 웹사이트
+라이센스
+본 README.md는 MIT 라이센스 제공됩니다.
