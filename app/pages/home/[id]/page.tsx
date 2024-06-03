@@ -11,8 +11,11 @@ import ExamplesMiniPages from "@/app/components/common/module/examples--mini";
 import WeatherMiniPage from "@/app/components/common/module/weather--mini";
 import CrimeRateMiniPage from "@/app/components/common/module/crime-rate--mini";
 import WidgetBoardMini from "@/app/components/common/module/widget-board--mini";
+import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
+import { useRouter } from "next/navigation";
 
 const Home: NextPage = (props: any) => {
+  const router = useRouter();
   return (
     <>
       <div className="flex flex-col w-screen justify-center items-center box-border text-[var(--color-main)] pb-[64px]">
@@ -65,7 +68,14 @@ const Home: NextPage = (props: any) => {
               <div className="widget-board--mini h-[771px] border border-[rgba(0,0,0,0.1)] rounded-lg bg-[var(--color-widget-bg)]">
                 <WidgetBoardMini />
               </div>
-              <div className="ai--mini h-[64px] border border-[rgba(0,0,0,0.1)] rounded-lg"></div>
+              <div className="whale--mini h-[64px] border border-[rgba(0,0,0,0.1)] rounded-lg flex justify-center items-center">
+                <button
+                  onClick={() => router.push("/pages/roro_ai")}
+                  className=" font-semibold"
+                >
+                  go to see roro <EastOutlinedIcon />
+                </button>
+              </div>
             </div>
           </div>
         </div>
